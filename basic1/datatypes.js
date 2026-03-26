@@ -1,1 +1,1 @@
-"use stricts";
+"use stricts"; 
