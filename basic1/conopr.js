@@ -1,4 +1,4 @@
-let score = undefined
+let score = undefined;
 
 console.log(typeof score);
 console.log(typeof score);
@@ -12,7 +12,7 @@ console.log(numIn);
 //"33" => 33
 // "22abc"=> NaN
 
-let isloggedin = 1
+let isloggedin = 1;
 
-let booleanIsLoggedin = Boolean(isloggedin)
-console.log(booleanIsLoggedin)
+let booleanIsLoggedin = Boolean(isloggedin);
+console.log(booleanIsLoggedin);
