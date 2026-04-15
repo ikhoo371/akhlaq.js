@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta view="viewport" content="width=device-width initial-scale 1.0">
+        <style>
+            
+
+        </style>
+        <title>CURRENCY EXCHANGER</title>
+    </head>
+    <body style="background-color: black; color: aliceblue;">
+        <h3>currency exchanger</h3>
+        <p>from</p>
+        <select name="currency" id="from">
+            <option value="usd">usd</option>
+            <option value="euro">euros</option>
+            <option value="pkr">pkr</option>
+        </select>
+        <p>to</p>
+        <select name="curr" id="to">
+            <option class="euro">euros</option>
+            <option class="usd">usd</option>
+            <option class="pkr">pkr</option>
+        </select>
+        <p>Enter a value</p>
+        <input id="input" type="number">
+        <button id="button">convert</button>
+        <p id="msg"></p>
+    
+
+    </body>
+    <script>
+        const msg = document.getElementById('msg')
+        const from = document.getElementById('from')
+        const to = document.getElementById('to')
+        const amount = document.getElementById('input')
+        const cnvrt = document.getElementById('button')
+        let result = 0;
+        cnvrt.addEventListener('click',function(){
+         if(from=='usd' ){
+            if(class=='pkr'){
+                let result =amount*280;
+            }
+        }
+        if(from=='usd' ){
+            if(class=='euro'){
+                let result =amount*0.85;
+            }
+        }
+        if(from=='usd' ){
+            if(class=='usd'){
+                let result =amount*1;
+            }
+        }
+        cnvrt.addEventListener('click',function(){
+            return result;
+            
+        msg.innerText=`${result}`
+        })})
+    </script>
+
+</html>
