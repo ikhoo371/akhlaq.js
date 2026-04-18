@@ -1,0 +1,33 @@
+body{
+    background-color: rgba(113, 109, 109, 0.493);
+    color: aliceblue;
+    text-align: center;
+    }
+.container{
+        background-color: bisque;
+        color: black;
+        vertical-align: middle;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+
+           }
+button{
+
+    padding: 10px;
+    border-radius: 10px;
+      }
+
+input{
+        padding: 10px;
+        border-radius: 10px;
+
+      }
+
+button:hover{
+                background-color: #14dc43;
+                color:aliceblue;
+                cursor: pointer
+                ;
+
+               }
