@@ -1,3 +1,5 @@
+const BASE_URL =
+  "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies";
 const countryList = {
   AED: "AE",
   AFN: "AF",
@@ -158,7 +160,7 @@ const countryList = {
   ZMK: "ZM",
   ZWD: "ZW",
 };
-const selecttag = document.querySelectorall("select");
+const selecttag = document.querySelectorAll("select");
 for (let select of selecttag) {
   for (let currcode in countryList) {
     let option = document.createElement("option");
@@ -170,3 +172,11 @@ for (let select of selecttag) {
     select.append(option);
   }
 }
+const btn = document.querySelector("#cnvrt");
+const cfrom = document.querySelector("#from");
+const cto = document.querySelector("#to");
+const msg = document.querySelector(".msg");
+btn.addEventListener("click", function (evt) {
+  evt.preventDefault();
+  updateExchangeRate();
+});
