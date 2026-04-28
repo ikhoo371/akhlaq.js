@@ -180,3 +180,22 @@ btn.addEventListener("click", function (evt) {
   evt.preventDefault();
   updateExchangeRate();
 });
+async function updateExchangeRate() {
+  let from = cfrom.value;
+  let to = cto.value;
+  let amount = document.querySelector("#amount").value;
+  if (amount == "" || amount <= 0) {
+    msg.innerText = "Please enter a valid amount";
+    return;
+  }
+  msg.innerText = "Getting exchange rate...";
+  try {
+    const response = await fetch(`${BASE_URL}/${from}/${to}.json`);
+    const data = await response.json();
+    let rate = data[to];
+    let total = (amount * rate).toFixed(2);
+    msg.innerText = `${amount} ${from} = ${total} ${to}`;
+  } catch (error) {
+    msg.innerText = "Error fetching exchange rate";
+  }
+}
