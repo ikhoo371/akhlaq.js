@@ -190,12 +190,17 @@ async function updateExchangeRate() {
   }
   msg.innerText = "Getting exchange rate...";
   try {
-    const response = await fetch(`${BASE_URL}/${from}/${to}.json`);
+    const response = await fetch(
+      `${BASE_URL}/${from.toLowerCase()}/${to.toLowerCase()}.json`,
+    );
     const data = await response.json();
-    let rate = data[to];
+    let rate = data[to.toLowerCase()];
     let total = (amount * rate).toFixed(2);
     msg.innerText = `${amount} ${from} = ${total} ${to}`;
   } catch (error) {
     msg.innerText = "Error fetching exchange rate";
   }
 }
+window.addEventListener("load", () => {
+  updateExchangeRate();
+});
