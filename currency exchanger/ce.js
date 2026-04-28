@@ -180,25 +180,35 @@ btn.addEventListener("click", function (evt) {
   updateExchangeRate();
 });
 async function updateExchangeRate() {
-  let from = cfrom.value;
-  let to = cto.value;
-  let amount = document.querySelector("#amount").value;
-  if (amount == "" || amount <= 0) {
-    msg.innerText = "Please enter a valid amount";
-    return;
-  }
-  msg.innerText = "Getting exchange rate...";
-  try {
-    const response = await fetch(
-      `${BASE_URL}/${from.toLowerCase()}/${to.toLowerCase()}.json`,
-    );
-    const data = await response.json();
-    let rate = data[to.toLowerCase()];
-    let total = (amount * rate).toFixed(2);
-    msg.innerText = `${amount} ${from} = ${total} ${to}`;
-  } catch (error) {
-    msg.innerText = "Error fetching exchange rate";
-  }
+    let from = cfrom.value.toLowerCase(); // API ko small letters chahiye
+    let to = cto.value.toLowerCase();
+    let amountVal = document.querySelector("#amount").value;
+
+    if (amountVal === "" || amountVal < 1) {
+        amountVal = 1;
+        document.querySelector("#amount").value = "1";
+    }
+
+    msg.innerText = "Getting exchange rate...";
+
+    // Yeh hai wo link jo 100% kaam karega
+    const URL = `https://latest.currency-api.pages.dev/v1/currencies/${from}.json`;
+
+    try {
+        let response = await fetch(URL);
+        if (!response.ok) throw new Error("Network response was not ok");
+        
+        let data = await response.json();
+        
+        // Data access karne ka sahi tariqa
+        let rate = data[from][to];
+        let finalAmount = (amountVal * rate).toFixed(2);
+
+        msg.innerText = `${amountVal} ${from.toUpperCase()} = ${finalAmount} ${to.toUpperCase()}`;
+    } catch (error) {
+        msg.innerText = "Error: API down ya internet masla hai";
+        console.error("Detail Error:", error);
+    }
 }
 window.addEventListener("load", () => {
   updateExchangeRate();
