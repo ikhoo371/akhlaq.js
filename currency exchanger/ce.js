@@ -1,4 +1,4 @@
-const BASE_URL = "https://open.er-api.com/v6/latest";
+const BASE_URL = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies";
 const countryList = {
   AED: "AE",
   AFN: "AF",
