@@ -4,4 +4,48 @@
   justify-content: center;
   min-height: 100vh;
   align-items: center;
+  border-radius: 100px;
+  background-color: #30bae0;
 }
+label {
+  font-size: 1.5rem;
+  color: #fff;
+}
+select {
+  padding: 6px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: none;
+}
+#amount {
+  padding: 6px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: none;
+}
+#cnvrt {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+#cnvrt:hover {
+  background-color: #7ae480;
+}
+#result {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  color: #fff;
+}
+.msg {
+  color: #ffcc00;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #333;
+}
+
