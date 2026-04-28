@@ -180,7 +180,7 @@ btn.addEventListener("click", function (evt) {
   updateExchangeRate();
 });
 async function updateExchangeRate() {
-    let from = cfrom.value.toLowerCase(); // API ko small letters chahiye
+    let from = cfrom.value.toLowerCase(); 
     let to = cto.value.toLowerCase();
     let amountVal = document.querySelector("#amount").value;
 
@@ -191,7 +191,7 @@ async function updateExchangeRate() {
 
     msg.innerText = "Getting exchange rate...";
 
-    // Yeh hai wo link jo 100% kaam karega
+    
     const URL = `https://latest.currency-api.pages.dev/v1/currencies/${from}.json`;
 
     try {
