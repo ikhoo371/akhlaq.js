@@ -2,10 +2,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 50vh;
   align-items: center;
-  border-radius: 100px;
-  background-color: #30bae0;
+  border-radius: 50px;
+  background-color: #90dcef;
+  margin-left: 510px;
+  margin-right: 510px;
 }
 label {
   font-size: 1.5rem;
@@ -22,6 +24,7 @@ select {
   font-size: 1.2rem;
   border-radius: 8px;
   border: none;
+  margin-top: 10px;
 }
 #cnvrt {
   padding: 10px 20px;
